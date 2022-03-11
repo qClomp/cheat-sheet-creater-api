@@ -8,8 +8,8 @@ var  CorsOrigins = "_CorsOrigins";
 builder.Services.AddCors(options => {
    options.AddPolicy(name: CorsOrigins, builder =>
         {
-            builder.WithOrigins("http://localhost:3000",
-                            "")
+             builder.WithOrigins("https://*.vercel.app")
+                    .SetIsOriginAllowedToAllowWildcardSubdomains()
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowCredentials();
